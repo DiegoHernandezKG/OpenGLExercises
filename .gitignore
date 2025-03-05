@@ -3,8 +3,7 @@ bin/*
 !FinishedExercises/
 !FinishedExercises/**/
 
-# Ignore the "resources" folder inside each subfolder
+!FinishedExercises/
+!FinishedExercises/**/
 FinishedExercises/**/resources/
-
-# Ignore all .exe files inside "main-folder"
-FinishedExercises/**/*.exe/
+FinishedExercises/**/*.exe

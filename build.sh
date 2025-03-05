@@ -1,14 +1,14 @@
 #!/bin/bash
 
-mkdir -p build_linux
-cd build_linux
+mkdir -p build
+cd build
 cmake ..
 make -j$(nproc)
 
 # Ensure bin/ exists
-mkdir -p ../bin_linux
+mkdir -p ../bin
 
 # Copy resources to bin/
-cp -r ../resources ../bin_linux/
+cp -r ../resources ../bin/
 
-echo "Build complete! Executable is in bin_linux/"
+echo "Build complete! Executable is in bin/"
