@@ -1,2 +1,10 @@
 build/*
 bin/*
+!FinishedExercises/
+!FinishedExercises/**/
+
+# Ignore the "resources" folder inside each subfolder
+FinishedExercises/**/resources/
+
+# Ignore all .exe files inside "main-folder"
+FinishedExercises/**/*.exe/
