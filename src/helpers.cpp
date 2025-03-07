@@ -1,5 +1,31 @@
 #include "helpers.hpp"
 #include <iostream>
+#include <glad/glad.h>
+#include <GLFW/glfw3.h>
+
+//TODO: Actually implement this
+class Application
+{
+    public:
+        void run()
+        {
+            init();
+            //This is specific to opengl
+            mainloop();
+            cleanup();
+        }
+    private:
+        void init()
+        {
+            initializeGLFW();
+            initializeGUI();
+        };
+        void mainloop();
+        void cleanup();
+};
+
+
+
 
 void initializeGLFW()
 {
