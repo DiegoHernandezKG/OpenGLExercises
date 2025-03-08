@@ -3,28 +3,6 @@
 #include <glad/glad.h>
 #include <GLFW/glfw3.h>
 
-//TODO: Actually implement this
-class Application
-{
-    public:
-        void run()
-        {
-            init();
-            //This is specific to opengl
-            mainloop();
-            cleanup();
-        }
-    private:
-        void init()
-        {
-            initializeGLFW();
-            initializeGUI();
-        };
-        void mainloop();
-        void cleanup();
-};
-
-
 
 
 void initializeGLFW()
@@ -44,6 +22,7 @@ ImGuiIO& initializeGUI()
     io.ConfigFlags |= ImGuiConfigFlags_NavEnableKeyboard;     // Enable Keyboard Controls
     io.ConfigFlags |= ImGuiConfigFlags_NavEnableGamepad;      // Enable Gamepad Controls
     return io;
+
 }
 
 GLFWwindow* createWindow(int SCR_WIDTH, int SCR_HEIGHT, const char* title)
@@ -63,6 +42,7 @@ GLFWwindow* createWindow(int SCR_WIDTH, int SCR_HEIGHT, const char* title)
 
     glfwMakeContextCurrent(window);
     glfwSetFramebufferSizeCallback(window, framebuffer_size_callback);
+    glfwSetInputMode(window, GLFW_CURSOR, GLFW_CURSOR_DISABLED);
 
     if (!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress))
     {
@@ -73,6 +53,7 @@ GLFWwindow* createWindow(int SCR_WIDTH, int SCR_HEIGHT, const char* title)
     std::cout << "[INFO] OpenGL from glad "
     << GLVersion.major << "." << GLVersion.minor
     << std::endl;
+    
     return window;
 
 }
@@ -121,3 +102,4 @@ void TestWindow(ImGuiIO& io)
     ImGui::End();
 
 }
+
