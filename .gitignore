@@ -1,6 +1,8 @@
 build/*
 bin/*
 temp/*
+imgui.ini
+
 !FinishedExercises/
 !FinishedExercises/**/
 

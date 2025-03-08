@@ -42,7 +42,7 @@ GLFWwindow* createWindow(int SCR_WIDTH, int SCR_HEIGHT, const char* title)
 
     glfwMakeContextCurrent(window);
     glfwSetFramebufferSizeCallback(window, framebuffer_size_callback);
-    glfwSetInputMode(window, GLFW_CURSOR, GLFW_CURSOR_DISABLED);
+    glfwSetInputMode(window, GLFW_CURSOR, GLFW_CURSOR_NORMAL);
 
     if (!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress))
     {
@@ -53,7 +53,8 @@ GLFWwindow* createWindow(int SCR_WIDTH, int SCR_HEIGHT, const char* title)
     std::cout << "[INFO] OpenGL from glad "
     << GLVersion.major << "." << GLVersion.minor
     << std::endl;
-    
+    std::cout << "Successfully created window" << "\n";
+
     return window;
 
 }
